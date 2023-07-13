@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para agregar un nuevo input
     agregarInput.addEventListener('click', () => {
         createInput();
+        console.log('se creo un input');
     });
 
       // Evento para eliminar el último input
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cajaPrincipal.removeChild(cajaPrincipal.lastChild);
             inputCount--;
         }
+        console.log('se elimino un input');
     });
 
         // evento para enviar y validar el formulario
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Agregue al menos un input antes de enviar el formulario.');
                 return;
             }
+            
     
             let isValid = true;
             
@@ -52,5 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.style.border = '3px solid blue';
             } else {
                 input.style.border = '';
+               
             }
+            
         });
+
+        if (isValid) {
+            // Enviar el formulario
+            alert('Formulario enviado exitosamente!');
+            console.log('se envio el formulario');
+            form.reset();
+        } else {
+            alert('Por favor, complete todos los campos.');
+            console.log('por favor, complete todos los campos');
+        }
+        
+    });
+});
