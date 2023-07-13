@@ -19,8 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputCount++;
     };
-    
+
     // Evento para agregar un nuevo input
     agregarInput.addEventListener('click', () => {
         createInput();
+    });
+
+      // Evento para eliminar el último input
+      eliminarInput.addEventListener('click', () => {
+        if (inputCount > 0) {
+            cajaPrincipal.removeChild(cajaPrincipal.lastChild);
+            inputCount--;
+        }
     });
