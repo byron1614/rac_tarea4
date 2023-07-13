@@ -43,3 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     
             let isValid = true;
+            
+            // Verificar que todos los inputs estén llenos
+        const inputs = Array.from(cajaPrincipal.querySelectorAll('input'));
+        inputs.forEach((input) => {
+            if (input.value.trim() === '') {
+                isValid = false;
+                input.style.border = '3px solid blue';
+            } else {
+                input.style.border = '';
+            }
+        });
