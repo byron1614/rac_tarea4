@@ -19,3 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inputCount++;
     };
+    
+    // Evento para agregar un nuevo input
+    agregarInput.addEventListener('click', () => {
+        createInput();
+    });
