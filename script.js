@@ -32,3 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
             inputCount--;
         }
     });
+
+        // evento para enviar y validar el formulario
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+    
+            if (inputCount === 0) {
+                alert('Agregue al menos un input antes de enviar el formulario.');
+                return;
+            }
+    
+            let isValid = true;
