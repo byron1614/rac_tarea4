@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         input.type = 'text';
         input.name = 'input';
         input.placeholder = 'INGRESE UN DATO';
+        input.classList.add('form-control');
 
         cajaPrincipal.appendChild(input);
 
@@ -26,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('se creo un input');
     });
 
-      // Evento para eliminar el último input
-      eliminarInput.addEventListener('click', () => {
+    // Evento para eliminar el último input
+    eliminarInput.addEventListener('click', () => {
         if (inputCount > 0) {
             cajaPrincipal.removeChild(cajaPrincipal.lastChild);
             inputCount--;
@@ -35,19 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('se elimino un input');
     });
 
-        // evento para enviar y validar el formulario
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-    
-            if (inputCount === 0) {
-                alert('Agregue al menos un input antes de enviar el formulario.');
-                return;
-            }
-            
-    
-            let isValid = true;
-            
-            // Verificar que todos los inputs estén llenos
+    // evento para enviar y validar el formulario
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (inputCount === 0) {
+            alert('Agregue al menos un input antes de enviar el formulario.');
+            return;
+        }
+
+
+        let isValid = true;
+
+        // Verificar que todos los inputs estén llenos
         const inputs = Array.from(cajaPrincipal.querySelectorAll('input'));
         inputs.forEach((input) => {
             if (input.value.trim() === '') {
@@ -55,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.style.border = '3px solid blue';
             } else {
                 input.style.border = '';
-               
+
             }
-            
+
         });
 
         if (isValid) {
@@ -69,6 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, complete todos los campos.');
             console.log('por favor, complete todos los campos');
         }
-        
+
     });
 });
